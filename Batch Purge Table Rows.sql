@@ -5,7 +5,7 @@ DECLARE
     @v_vchMsg                     uddt_output_msg
 SET NOCOUNT ON
 DECLARE @BatchSize INT = 5000;
-DECLARE @TotalRows INT = (SELECT COUNT(*) FROM t_allocation_q (NOLOCK));
+DECLARE @TotalRows INT = (SELECT COUNT(*) FROM t_table (NOLOCK));
 DECLARE @RowsProcessed INT = 0;
 DECLARE @StartTime DATETIME = GETDATE();
 DECLARE @CurrentTimeStr NVARCHAR(21)
@@ -16,7 +16,7 @@ WHILE @RowsProcessed < @TotalRows
 BEGIN
     BEGIN TRANSACTION;
     BEGIN TRY
-        DELETE TOP (@BatchSize) FROM t_table;
+        DELETE TOP (@BatchSize) FROM t_allocation_q;
         SET @RowsProcessed = @RowsProcessed + @@ROWCOUNT;
         DECLARE @ElapsedTime INT = DATEDIFF(SECOND, @StartTime, GETDATE());
         DECLARE @RemainingTime INT = (@TotalRows - @RowsProcessed) / (@RowsProcessed / @ElapsedTime);
