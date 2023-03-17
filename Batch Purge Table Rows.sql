@@ -44,3 +44,12 @@ BEGIN
 END
 
 PRINT 'COMPLETE.'
+
+/*
+Example Output:
+2023-03-17 17:23:39.0 > Rows deleted: 580000 of 35847824 (1.61795%) - 83 minutes remaining
+2023-03-17 17:23:45.7 > Rows deleted: 585000 of 35847824 (1.6319%) - 88 minutes remaining
+2023-03-17 17:23:45.9 > Rows deleted: 590000 of 35847824 (1.64585%) - 87 minutes remaining
+2023-03-17 17:23:46.2 > Rows deleted: 595000 of 35847824 (1.65979%) - 87 minutes remaining
+2023-03-17 17:23:46.4 > Rows deleted: 600000 of 35847824 (1.67374%) - 87 minutes remaining
+*/
