@@ -16,7 +16,7 @@ WHILE @RowsProcessed < @TotalRows
 BEGIN
     BEGIN TRANSACTION;
     BEGIN TRY
-        DELETE TOP (@BatchSize) FROM t_allocation_q;
+        DELETE TOP (@BatchSize) FROM t_table;
         SET @RowsProcessed = @RowsProcessed + @@ROWCOUNT;
         DECLARE @ElapsedTime INT = DATEDIFF(SECOND, @StartTime, GETDATE());
         DECLARE @RemainingTime INT = (@TotalRows - @RowsProcessed) / (@RowsProcessed / @ElapsedTime);
