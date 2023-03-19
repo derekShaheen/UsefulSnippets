@@ -37,7 +37,7 @@ PRINT 'PROCESSING...'
 
 -- Set the SQL statement and execute it using sp_executesql
 SET @sql = N'SELECT @TotalRows = COUNT(*) FROM ' + @TableName + ' (NOLOCK)';
-exec sp_executesql @sql, N'@TotalRows INT output', @TotalRows output;
+EXEC sp_executesql @sql, N'@TotalRows INT output', @TotalRows output;
 
 -- Use a while loop to delete rows from the table in batches
 WHILE @RowsProcessed < @TotalRows
