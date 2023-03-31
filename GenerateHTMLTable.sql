@@ -55,7 +55,9 @@ CREATE PROCEDURE dbo.usp_ww_generic_header_op
     @VarValue10 NVARCHAR(255) = NULL,
     @VarValue11 NVARCHAR(255) = NULL,
     @VarValue12 NVARCHAR(255) = NULL,
-    @NumColumns INT = 1
+    @NumColumns INT = 1,
+    @BackgroundColor NVARCHAR(7) = '#FFFFFF', -- Background color of each cell
+    @FontColor NVARCHAR(7) = '#000000' -- Font color inside each cell
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -110,7 +112,7 @@ BEGIN
     GroupedRows AS (
         SELECT
             RowNum,
-            (SELECT '<td style="padding:1px; text-align:center;"><center><b>' + VarName + '</b></center></td><td style="padding:1px; text-align:center;">' + VarValue + '</td>'
+            (SELECT '<td style="padding:1px; text-align:center; background-color:' + @BackgroundColor + '; color:' + @FontColor + ';"><b><center>' + VarName + '</center></b></td><td style="padding:1px; text-align:center; background-color:' + @BackgroundColor + '; color:' + @FontColor + ';">' + VarValue + '</td>'
              FROM Rows
              WHERE RowNum = R.RowNum
              FOR XML PATH(''), TYPE).value('.[1]', 'NVARCHAR(MAX)') AS Cells
