@@ -19,6 +19,19 @@ GO
 --
 --    HISTORY:
 --        1.0 - 2023/03/31 - Derek Shaheen - Initial version
+/* Sample Call:
+    ~~SQLServer(Header)~~
+    EXEC usp_ww_generic_header_op
+        @VarName1 = 'Warehouse ID',
+        @VarName2 = 'Employee ID',
+        @VarName3 = 'Searched Item Number',
+        @VarName4 = 'Searched Lot Number',
+        @VarValue1 = '~srchwi~',
+        @VarValue2 = '~WW_USERNAME~',
+        @VarValue3 = '~srchin~',
+        @VarValue4 = '~srchlt~',
+        @NumColumns = 2;
+*/
 -------------------------------------------------------------------------------
 
 CREATE PROCEDURE dbo.usp_ww_generic_header_op
