@@ -35,7 +35,7 @@ GO
 -------------------------------------------------------------------------------
 
 CREATE PROCEDURE dbo.usp_ww_generic_header_op
-	@VarName1 NVARCHAR(255) = 'Var1',
+    @VarName1 NVARCHAR(255) = 'Var1',
     @VarName2 NVARCHAR(255) = 'Var2',
     @VarName3 NVARCHAR(255) = 'Var3',
     @VarName4 NVARCHAR(255) = 'Var4',
@@ -73,7 +73,7 @@ BEGIN
     SET @VarValue6 = REPLACE(@VarValue6, '%', '');
     SET @VarValue7 = REPLACE(@VarValue7, '%', '');
     SET @VarValue8 = REPLACE(@VarValue8, '%', '');
-	SET @VarValue9 = REPLACE(@VarValue9, '%', '');
+    SET @VarValue9 = REPLACE(@VarValue9, '%', '');
     SET @VarValue10 = REPLACE(@VarValue10, '%', '');
     SET @VarValue11 = REPLACE(@VarValue11, '%', '');
     SET @VarValue12 = REPLACE(@VarValue12, '%', '');
@@ -94,7 +94,7 @@ BEGIN
                 (6, @VarName6, @VarValue6),
                 (7, @VarName7, @VarValue7),
                 (8, @VarName8, @VarValue8),
-				(9, @VarName9, @VarValue9),
+                (9, @VarName9, @VarValue9),
                 (10, @VarName10, @VarValue10),
                 (11, @VarName11, @VarValue11),
                 (12, @VarName12, @VarValue12)
