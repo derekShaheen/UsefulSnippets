@@ -11,7 +11,7 @@
 --        SQL Server
 --
 --    HISTORY:
-          1.0 - 2023/03/31 - Derek Shaheen - Initial version
+--        1.0 - 2023/03/31 - Derek Shaheen - Initial version
 -------------------------------------------------------------------------------
 
 SET NOCOUNT ON

@@ -1,4 +1,4 @@
-﻿DROP PROCEDURE IF EXISTS dbo.GenerateHTMLTable
+﻿DROP PROCEDURE IF EXISTS dbo.usp_ww_generic_header_op
 GO
 
 -------------------------------------------------------------------------------
@@ -21,8 +21,8 @@ GO
 --        1.0 - 2023/03/31 - Derek Shaheen - Initial version
 -------------------------------------------------------------------------------
 
-CREATE PROCEDURE dbo.GenerateHTMLTable
-    @VarName1 NVARCHAR(255) = 'Var1',
+CREATE PROCEDURE dbo.usp_ww_generic_header_op
+	@VarName1 NVARCHAR(255) = 'Var1',
     @VarName2 NVARCHAR(255) = 'Var2',
     @VarName3 NVARCHAR(255) = 'Var3',
     @VarName4 NVARCHAR(255) = 'Var4',
@@ -30,6 +30,10 @@ CREATE PROCEDURE dbo.GenerateHTMLTable
     @VarName6 NVARCHAR(255) = 'Var6',
     @VarName7 NVARCHAR(255) = 'Var7',
     @VarName8 NVARCHAR(255) = 'Var8',
+    @VarName9 NVARCHAR(255) = 'Var9',
+    @VarName10 NVARCHAR(255) = 'Var10',
+    @VarName11 NVARCHAR(255) = 'Var11',
+    @VarName12 NVARCHAR(255) = 'Var12',
     @VarValue1 NVARCHAR(255) = NULL,
     @VarValue2 NVARCHAR(255) = NULL,
     @VarValue3 NVARCHAR(255) = NULL,
@@ -38,6 +42,10 @@ CREATE PROCEDURE dbo.GenerateHTMLTable
     @VarValue6 NVARCHAR(255) = NULL,
     @VarValue7 NVARCHAR(255) = NULL,
     @VarValue8 NVARCHAR(255) = NULL,
+    @VarValue9 NVARCHAR(255) = NULL,
+    @VarValue10 NVARCHAR(255) = NULL,
+    @VarValue11 NVARCHAR(255) = NULL,
+    @VarValue12 NVARCHAR(255) = NULL,
     @NumColumns INT = 1
 AS
 BEGIN
@@ -52,6 +60,10 @@ BEGIN
     SET @VarValue6 = REPLACE(@VarValue6, '%', '');
     SET @VarValue7 = REPLACE(@VarValue7, '%', '');
     SET @VarValue8 = REPLACE(@VarValue8, '%', '');
+	SET @VarValue9 = REPLACE(@VarValue9, '%', '');
+    SET @VarValue10 = REPLACE(@VarValue10, '%', '');
+    SET @VarValue11 = REPLACE(@VarValue11, '%', '');
+    SET @VarValue12 = REPLACE(@VarValue12, '%', '');
 
     -- Initialize the HTML table
     DECLARE @html NVARCHAR(MAX);
@@ -68,7 +80,11 @@ BEGIN
                 (5, @VarName5, @VarValue5),
                 (6, @VarName6, @VarValue6),
                 (7, @VarName7, @VarValue7),
-                (8, @VarName8, @VarValue8)
+                (8, @VarName8, @VarValue8),
+				(9, @VarName9, @VarValue9),
+                (10, @VarName10, @VarValue10),
+                (11, @VarName11, @VarValue11),
+                (12, @VarName12, @VarValue12)
         ) AS V(id, VarName, VarValue)
         WHERE VarValue IS NOT NULL
     ),
