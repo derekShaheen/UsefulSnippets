@@ -8,7 +8,7 @@ GO
 --        This stored procedure generates an HTML table containing the names and values of up to 8 variables.
 --        The table can have a variable number of columns based on the @NumColumns parameter.
 --        The table will only display rows with non-null variable values.
---        Each table cell has 1px padding and centered text.
+--        Each table cell has 2px padding and centered text.
 --      
 --    TARGET: 
 --        SQL Server
@@ -56,7 +56,7 @@ CREATE PROCEDURE dbo.usp_ww_generic_header_op
     @VarValue11 NVARCHAR(255) = NULL,
     @VarValue12 NVARCHAR(255) = NULL,
     @NumColumns INT = 1,
-    @BackgroundColor NVARCHAR(7) = '#FFFFFF', -- Background color of each cell
+    @BackgroundColor NVARCHAR(7) = '#EEEEEE', -- Background color of each cell
     @FontColor NVARCHAR(7) = '#000000' -- Font color inside each cell
 AS
 BEGIN
@@ -112,7 +112,8 @@ BEGIN
     GroupedRows AS (
         SELECT
             RowNum,
-            (SELECT '<td style="padding:1px; text-align:center; background-color:' + @BackgroundColor + '; color:' + @FontColor + ';"><b><center>' + VarName + '</center></b></td><td style="padding:1px; text-align:center; background-color:' + @BackgroundColor + '; color:' + @FontColor + ';">' + VarValue + '</td>'
+            (SELECT '<td style="padding:2px; text-align:center; background-color:' + @BackgroundColor + '; color:' + @FontColor + ';"><b>'  + VarName +
+           '</b></td><td style="padding:2px; text-align:center; background-color:' + @BackgroundColor + '; color:' + @FontColor + ';">'     + VarValue + '</td>'
              FROM Rows
              WHERE RowNum = R.RowNum
              FOR XML PATH(''), TYPE).value('.[1]', 'NVARCHAR(MAX)') AS Cells
