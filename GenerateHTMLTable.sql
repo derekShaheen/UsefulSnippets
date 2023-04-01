@@ -28,6 +28,11 @@ GO
         @VarValue3 = '~srchin~',
         @VarValue4 = '~srchlt~',
         @NumColumns = 2;
+        -- Again all these are optional
+        @BackgroundColor = '#EEEEEE', -- Background color of each cell 
+        @FontColor = '#000000', -- Font color inside each cell 
+        @TableWidth = 'auto', -- Width of the table / Width in % or px / auto 
+        @TableAlignment = 'center' -- Alignment of the text in table;
 */
 -------------------------------------------------------------------------------
 
