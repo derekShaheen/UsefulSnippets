@@ -15,6 +15,7 @@ GO
 --
 --    HISTORY:
 --        1.0 - 2023/03/31 - Derek Shaheen - Initial version
+
 /* Sample Call:
     ~~SQLServer(Header)~~
     EXEC usp_ww_generic_header_op
@@ -59,7 +60,7 @@ CREATE PROCEDURE dbo.usp_ww_generic_header_op
     @BackgroundColor NVARCHAR(7) = '#EEEEEE', -- Background color of each cell
     @FontColor NVARCHAR(7) = '#000000', -- Font color inside each cell
     @TableWidth NVARCHAR(50) = 'auto', -- Width of the table / Width in % or px / auto
-    @TableAlignment NVARCHAR(50) = 'center' -- Alignment of the table
+    @TableAlignment NVARCHAR(50) = 'center' -- Alignment of the text in table
 AS
 BEGIN
     SET NOCOUNT ON;
