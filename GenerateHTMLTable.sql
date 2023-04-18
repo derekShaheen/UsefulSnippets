@@ -86,7 +86,7 @@ BEGIN
 
     -- Initialize the HTML table
     DECLARE @html NVARCHAR(MAX);
-	SET @html = N'<div style="text-align:' + @TableAlignment + ';"><table border="1" style="width:' + @TableWidth + '; border-collapse:collapse;">' + CHAR(13);
+	SET @html = N'<div style="text-align:' + @TableAlignment + ';"><table border="1" cellspacing="1" cellpadding="3" style="width:' + @TableWidth + '; border-collapse:collapse;">' + CHAR(13);
 
     -- Create a table with variable values and IDs
     WITH VariableValues AS (
@@ -120,8 +120,8 @@ BEGIN
     GroupedRows AS (
         SELECT
             RowNum,
-            (SELECT '<td style="padding:2px; background-color:' + @BackgroundColor + '; color:' + @FontColor + ';"><b>' + VarName +
-            '</b></td><td style="padding:2px; background-color:' + @BackgroundColor + '; color:' + @FontColor + ';">' + VarValue + '</td>'
+            (SELECT '<td style="background-color:' + @BackgroundColor + '; color:' + @FontColor + ';"><b>' + VarName +
+            '</b></td><td style="background-color:' + @BackgroundColor + '; color:' + @FontColor + ';">' + VarValue + '</td>'
              FROM Rows
              WHERE RowNum = R.RowNum
              FOR XML PATH(''), TYPE).value('.[1]', 'NVARCHAR(MAX)') AS Cells
