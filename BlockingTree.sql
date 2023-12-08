@@ -8,7 +8,7 @@
 --        SQL Server
 --
 --    HISTORY:
---        1.0 - 2023/09 - Max Brady/Derek Shaheen - Initial version
+--        1.0 - 07/07/2015 Pinal Dave - Published at: https://blog.sqlauthority.com/2015/07/07/sql-server-identifying-blocking-chain-using-sql-scripts/
 
 /* Sample Result:
     HEAD -  326         SELECT ….
