@@ -8,7 +8,7 @@
 --        SQL Server
 --
 --    HISTORY:
---        1.0 - 2023/03/31 - Max Brady/Derek Shaheen - Initial version
+--        1.0 - 2023/09 - Max Brady/Derek Shaheen - Initial version
 
 /* Sample Result:
     HEAD -  326         SELECT ….
