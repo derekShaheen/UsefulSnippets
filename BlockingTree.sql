@@ -11,8 +11,12 @@
 --        1.0 - 2023/03/31 - Max Brady/Derek Shaheen - Initial version
 
 /* Sample Result:
-
+    HEAD -  326         SELECT ….
+    |         |------  196         SELECT…
+    |         |         |------  133   DELETE…
 */
+-- While here we are only showing the first word of the statement in the sample output, the entire command will actually be shown.
+-- This example shows that session 326 is blocking 196, and 196 is blocking 133.
 -------------------------------------------------------------------------------
 
 SET NOCOUNT ON
