@@ -31,8 +31,8 @@ DECLARE @sql NVARCHAR(MAX); -- Initialize the SQL statement variable
 -- Declare error variables
 DECLARE @v_nSysErrorNum INTEGER, -- System error number variable
 @v_vchErrMsg NVARCHAR(MAX), -- Error message variable
-@v_vchCode uddt_output_code, -- Output code variable
-@v_vchMsg uddt_output_msg; -- Output message variable
+@v_vchCode NVARCHAR(500), -- Output code variable
+@v_vchMsg NVARCHAR(1000); -- Output message variable
 -- 
 
 PRINT 'PLEASE NOTE, ONLY 500 PRINT STATEMENTS WILL APPEAR UNTIL THE LOG MAXES OUT....'
