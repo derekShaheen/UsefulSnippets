@@ -17,7 +17,7 @@
 SET NOCOUNT ON
 
 -- Declare User Set Variables
-DECLARE @BatchSize INT = 100; -- Set the size of the batch
+DECLARE @BatchSize INT = 5000; -- Set the size of the batch
 DECLARE @TableName NVARCHAR(MAX) = 't_table'; -- Set the name of the table to purge
 -- Typical use does not require modification below this line if you need to purge indiscriminately.
 
