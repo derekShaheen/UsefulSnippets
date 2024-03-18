@@ -8,9 +8,9 @@
 --    INPUT:
 --		  You must insert into @tmp_Tables the table and clause you want to create statements for. 
 --		  For example:
---			INSERT INTO @tmp_Tables 
---			VALUES ('t_order', 'dbo', 'order_number =''881055921'' '), 
---				   ('t_order_detail', 'dbo', 'order_number =''881055921'' ')
+--		  INSERT INTO @tmp_Tables  (TableName, Condition) -- , SchemaName)
+--		  VALUES ('t_order', 'order_number =''881070921'' '), 
+--		      ('t_order_detail', 'order_number =''881070921'' ')
 --      
 --    TARGET: 
 --        SQL Server
@@ -18,6 +18,8 @@
 --    HISTORY:
 --		 <1.0 -			   - Sandy Watkins - Inital Logic design
 --        1.0 - 2023/03/31 - Derek Shaheen - Optimization
+--        1.1 - 2024/03/18 - Derek Shaheen - Modified to prevent loop when providing null condition.
+--                                           Modified input parameters to make schemaname optional.
 -------------------------------------------------------------------------------
 
 -- Declare a table variable to hold table name, schema name and condition
