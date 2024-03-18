@@ -17,10 +17,10 @@
 --        EXEC usp_geninserts 't_order_detail', 'dbo', 'order_number =''881055921'' ';
 -------------------------------------------------------------------------------
 
-CREATE PROCEDURE usp_geninserts
+CREATE PROCEDURE usp_wms_util_geninserts
     @TableName SYSNAME, 
-    @SchemaName SYSNAME, 
-    @Condition VARCHAR(500)
+    @Condition VARCHAR(500),
+    @SchemaName SYSNAME = 'dbo'
 AS
 BEGIN
     DECLARE @ColumnList VARCHAR(max) = '', 
