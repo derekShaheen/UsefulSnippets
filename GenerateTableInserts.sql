@@ -80,5 +80,5 @@ BEGIN
     EXEC(@SQL);
 
     -- Delete the processed table details from the table variable
-    DELETE FROM @tmp_Tables WHERE TableName = @TableName AND SchemaName = @SchemaName AND Condition = @Condition
+    DELETE FROM @tmp_Tables WHERE TableName = @TableName AND SchemaName = @SchemaName AND ISNULL(Condition, '') = ISNULL(@Condition, '')
 END
