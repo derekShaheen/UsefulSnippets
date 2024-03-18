@@ -24,14 +24,14 @@
 DECLARE @tmp_Tables TABLE 
 (
     TableName SYSNAME,
-    SchemaName SYSNAME,
-    Condition VARCHAR(500)
+    Condition VARCHAR(500),
+    SchemaName SYSNAME DEFAULT 'dbo'
 )
 
 -- Insert the required table details into the table variable
-INSERT INTO @tmp_Tables 
-VALUES ('t_order', 'dbo', 'order_number =''881070921'' '), 
-       ('t_order_detail', 'dbo', 'order_number =''881070921'' ')
+INSERT INTO @tmp_Tables  (TableName, Condition) -- , SchemaName)
+VALUES ('t_order', 'order_number =''881070921'' '), 
+       ('t_order_detail', 'order_number =''881070921'' ')
 
 -- Declare variables for table name, schema name and condition
 DECLARE @TableName SYSNAME, @SchemaName SYSNAME, @Condition VARCHAR(500)
