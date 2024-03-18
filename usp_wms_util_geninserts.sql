@@ -11,10 +11,11 @@
 --    HISTORY:
 --		 <1.0 -			   - Sandy Watkins - Inital Logic design
 --        1.0 - 2023/03/31 - Derek Shaheen - Optimization, sprocified.
+--        1.1 - 2024/03/18 - Derek Shaheen - Modified input parameters to make Schemaname optional (default is dbo)
 --
 --    Example Calls
---        EXEC usp_geninserts 't_order', 'dbo', 'order_number =''881055921'' ';
---        EXEC usp_geninserts 't_order_detail', 'dbo', 'order_number =''881055921'' ';
+--        EXEC usp_geninserts 't_order', 'order_number =''881055921'' ';
+--        EXEC usp_geninserts 't_order_detail', 'order_number =''881055921'' ';
 -------------------------------------------------------------------------------
 
 CREATE PROCEDURE usp_wms_util_geninserts
