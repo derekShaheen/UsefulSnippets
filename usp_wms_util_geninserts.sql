@@ -10,7 +10,7 @@
 --
 --    HISTORY:
 --		 <1.0 -			   - Sandy Watkins - Inital Logic design
---        1.0 - 2023/03/31 - Derek Shaheen - Optimization, sprocified.
+--        1.0 - 2023/03/31 - Derek Shaheen - Optimization, sprocified, removed loops.
 --        1.1 - 2024/03/18 - Derek Shaheen - Modified input parameters to make Schemaname optional (default is dbo)
 --
 --    Example Calls
